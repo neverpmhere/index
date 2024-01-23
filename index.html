@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Oxygen', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #222034;
+            font-size: 24px; /* Размер основного шрифта */
+        }
+
+        .container {
+            display: flex;
+            height: 80vh; /* 80% высоты страницы */
+            width: 80%;
+            background-color: #25293f; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid black; /* Черная обводка контейнера */
+        }
+
+        .sidebar {
+            width: 20%;
+            height: 100%; /* Заполнение всей высоты сайдбара */
+            background-color: rgba(33, 31, 63, 0.9); /* полупрозрачный фон */
+            color: #ecf0f1; /* светло-серый */
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 24px; /* Размер шрифта сайдбара */
+            border-right: 2px solid black; /* Черная обводка сайдбара */
+        }
+
+        .main-content {
+            width: 80%;
+            height: 100%; /* Заполнение всей высоты основного контента */
+            padding: 20px;
+            box-sizing: border-box;
+            color: #ecf0f1; /* светло-серый */
+            overflow-y: auto; /* Добавлено для возможности прокрутки основного контента */
+            font-size: 24px; /* Размер шрифта основного контента */
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .category-list li:hover {
+            text-decoration: underline;
+        }
+
+        .category-list li.active {
+            font-weight: bold; /* Жирный текст для активной категории в сайдбаре */
+        }
+
+        .category-content {
+            display: none;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        /* Стили для полосы прокрутки */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #25293f; /* Цвет фона трека */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #211f3f; /* Цвет ползунка */
+            border-radius: 10px;
+            border: 3px solid #25293f; /* Цвет обводки ползунка */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul class="category-list">
+                <li onclick="showCategory('category1')" class="active">Welcome to the world!</li>
+                <li onclick="showCategory('category2')">Gameplay</li>
+                <li onclick="showCategory('category3')">Level System</li>
+                <li onclick="showCategory('category4')">Experience</li>
+                <li onclick="showCategory('category5')">Skills</li>
+                <li onclick="showCategory('category6')">Travel</li>
+                <li onclick="showCategory('category7')">Trade Guild</li>
+                <li onclick="showCategory('category8')">NPC's</li>
+                <li onclick="showCategory('category9')">Anticheat</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div id="category1" class="category-content active">
+                <p>Step into our open-world MMORPG, where character 
+                    growth transcends traditional leveling. 
+                    Your journey unfolds through dynamic actions 
+                    rather than a linear experience. 
+                    Traverse diverse landscapes, battle monsters, and 
+                    form alliances with players to become a 
+                    legend in this immersive fantasy realm. 
+                    Every engagement and exploration contributes 
+                    to your character's unique skill set, 
+                    offering an ever-evolving adventure 
+                    where your choices shape the narrative. 
+                    Immerse yourself in a gaming experience 
+                    that prioritizes meaningful gameplay, 
+                    propelling you into a world where 
+                    progression is driven by your actions.</p>
+            </div>
+            <div id="category2" class="category-content">
+                <h1>Gameplay</h1>
+                <p>Информация о категории 2...</p>
+            </div>
+            <div id="category3" class="category-content">
+                <h1>Level System</h1>
+                <p>Pixels Table System</p>
+                <h6>May contain inaccuracies and will be changed and supplemented in the future</h6>
+                <table border="1" cellpadding="8">
+                    <tr>
+                        <th>LEVEL</th>
+                        <th>TOTAL XP</th>
+                        <th>LEVEL UP</th>
+                    </tr>
+                    <tr>
+                        <td>00</td>
+                        <td>00</td>
+                        <td>+100</td>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>100</td>
+                        <td>+216</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>316</td>
+                        <td>+345</td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>661</td>
+                        <td>+487</td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>1148</td>
+                        <td>+644</td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>1792</td>
+                        <td>+817</td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>2609</td>
+                        <td>+1009</td>
+                    </tr>
+                    <tr>
+                        <td>07</td>
+                        <td>3618</td>
+                        <td>+1221</td>
+                    </tr>
+                    <tr>
+                        <td>08</td>
+                        <td>4839</td>
+                        <td>+1455</td>
+                    </tr>
+                    <tr>
+                        <td>09</td>
+                        <td>6294</td>
+                        <td>+1713</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>8007</td>
+                        <td>+1999</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>10006</td>
+                        <td>+2315</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>12321</td>
+                        <td>+2664</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14985</td>
+                        <td>+3049</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>18034</td>
+                        <td>+3473</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>21507</td>
+                        <td>+3953</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>25460</td>
+                        <td>+4463</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>29923</td>
+                        <td>+5045</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>34968</td>
+                        <td>+5681</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>40649</td>
+                        <td>+6390</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>47039</td>
+                        <td>+7161</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>54200</td>
+                        <td>+8020</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>62219</td>
+                        <td>+8969</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>71188</td>
+                        <td>+10018</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>81206</td>
+                        <td>+11177</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>92383</td>
+                        <td>+12459</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>104842</td>
+                        <td>+13875</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>118717</td>
+                        <td>+15440</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>134157</td>
+                        <td>+17169</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>151326</td>
+                        <td>+19081</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>170407</td>
+                        <td>+21193</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>191600</td>
+                        <td>+23528</td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>215128</td>
+                        <td>+26108</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>241236</td>
+                        <td>+28959</td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>270195</td>
+                        <td>+32110</td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td>302305</td>
+                        <td>+35593</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="category4" class="category-content">
+                <p>Each skill has up to 100 levels, and they all start at level 0 with 0 experience.</p>
+                <p>Your first level will be up to level 1.</p>
+                <p>Each level has its own experience bar, and all skills have the same amount of total experience.
+                    Currently, the only benefit of leveling up is greater access to rare items or more recipes for each industry.</p>
+                <p>Experience increases through your character's actions, for example, for farming, you need to harvest crops.</p>
+            </div>
+            <div id="category5" class="category-content">
+                <h1>Категория 2</h1>
+                <p>Информация о категории 2...</p>
+            </div>
+            <div id="category6" class="category-content">
+                <h1>Категория 2</h1>
+                <p>Информация о категории 2...</p>
+            </div>
+            <div id="category7" class="category-content">
+                <h1>Категория 2</h1>
+                <p>Информация о категории 2...</p>
+            </div>
+            <div id="category8" class="category-content">
+                <p>AI NPCs are able to respond to player actions in a more natural way, 
+                    and their behavior can evolve depending on scenarios and interactions with players.
+                    The implementation of such technologies requires the active intervention of developers and users. 
+                    Everyone will adjust AI settings to ensure balanced gameplay, 
+                    preventing interactions from being too random or overly difficult. 
+                    Developers will also be responsible for optimizing performance and ensuring the ethical use of artificial intelligence in a gaming context.</p>
+            </div>
+            <div id="category9" class="category-content">
+                <p>An anti-cheat system using artificial intelligence provides more effective means of detecting and preventing cheating in games.
+                    AI algorithms analyze player data in real time, identifying suspicious behavior patterns such as overly precise actions or unusual movements 
+                    that could indicate cheating.
+                    Anti-cheat will also improve itself, update algorithms in response to new methods of fraud, ensuring the constant evolution of the anti-cheat system.
+                    It is important that the anti-cheat works fairly and does not affect honest players. The developers are closely monitoring the reaction of the gaming community, 
+                    providing feedback and making adjustments to the anti-cheat system to ensure an optimal gaming experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Показываем контент первой категории при загрузке страницы
+        showCategory('category1');
+
+        function showCategory(categoryId) {
+            // Скрыть все категории
+            const allCategories = document.querySelectorAll('.category-content');
+            allCategories.forEach(category => {
+                category.classList.remove('active');
+            });
+
+            // Снять выделение со всех категорий в сайдбаре
+            const allCategoryItems = document.querySelectorAll('.category-list li');
+            allCategoryItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Показать выбранную категорию
+            const selectedCategory = document.getElementById(categoryId);
+            selectedCategory.classList.add('active');
+
+            // Выделить выбранную категорию в сайдбаре
+            const selectedCategoryItem = document.querySelector(`[data-category="${categoryId}"]`);
+            selectedCategoryItem.classList.add('active');
+        }
+    </script>
+</body>
+</html>
+
+
+
